@@ -6,10 +6,10 @@ import numpy as np
 
 detector = dlib.get_frontal_face_detector()
 
-predictor_path = 'D:/workspace/PycharmProjects/dlib_test/shape_predictor_68_face_landmarks.dat'
+predictor_path = './shape_predictor_68_face_landmarks.dat'
 predictor = dlib.shape_predictor(predictor_path)
 
-face_rec_model_path = 'D:/workspace/PycharmProjects/dlib_test/dlib_face_recognition_resnet_model_v1.dat'
+face_rec_model_path = './dlib_face_recognition_resnet_model_v1.dat'
 facerec = dlib.face_recognition_model_v1(face_rec_model_path)
 
 image_types = ['*.jpg', '*.jpeg']
@@ -40,7 +40,7 @@ def classifier(a, b, t=0.1):
 def find():
     repo_images=[]
     for type in image_types:
-        repo_images.extend(glob.glob(f'D:/workspace/PycharmProjects/dlib_test/face_repo/{type}'))
+        repo_images.extend(glob.glob(f'./face_repo/{type}'))
 
     test_face = sys.argv[1]
     print(f'face to test is {test_face}')
